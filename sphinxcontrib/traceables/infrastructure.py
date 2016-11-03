@@ -200,7 +200,7 @@ class ProcessorBase(object):
         for node in doctree.traverse(self.process_node_type):
             try:
                 self.process_node(node, doctree, docname)
-            except self.Error, error:
+            except self.Error as error:
                 message = str(error)
                 self.env.warn_node(message, node)
                 msg = nodes.system_message(message=message,

@@ -147,11 +147,11 @@ class TraceableDirective(Directive):
         traceable = Traceable(target_node)
         try:
             TraceablesStorage(env).add_traceable(traceable)
-        except ValueError, e:
-            env.warn_node(e.message, target_node)
+        except ValueError as e:
+            env.warn_node(e, target_node)
             # TODO: Should use error handling similar to this:
             # Error = ExtensionError
-            # except self.Error, error:
+            # except self.Error as error:
             #    message = str(error)
             #    self.env.warn_node(message, node)
             #    msg = nodes.system_message(message=message,

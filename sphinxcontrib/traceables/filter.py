@@ -27,7 +27,7 @@ class ExpressionMatcher(object):
         self.expression_string = expression_string
         try:
             self.expression_tree = ast.parse(expression_string)
-        except SyntaxError, error:
+        except SyntaxError as error:
             raise FilterError(None, "Invalid filter syntax")
 
     def matches(self, identifier_values):
