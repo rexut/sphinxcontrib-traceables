@@ -17,7 +17,7 @@ def pretty_print_xml(node):
     minidom_xml = minidom.parseString(ElementTree.tostring(node))
     output = minidom_xml.toprettyxml(indent="  ")
     lines = [line for line in output.splitlines() if line.strip()]
-    print "\n".join(lines)
+    print("\n".join(lines))
 
 
 def with_app(*args, **kwargs):

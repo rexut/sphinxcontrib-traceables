@@ -23,4 +23,5 @@ def test_graph_html(app, status, warning):
     # Verify that output contains link to graph.
     with (app.outdir / "index.html").open('rb') as index_html_file:
         index_html = index_html_file.read()
-    assert re.search('<img src="_images/graphviz-[^"]+.png"', index_html)
+    assert re.search('<img src="_images/graphviz-[^"]+.png"',
+                     index_html.decode('utf-8'))
