@@ -1,6 +1,10 @@
 language: python
+sudo: false
 python:
   - 2.7
+  - 3.3
+  - 3.4
+  - 3.5
 addons:
   apt:
     packages:
@@ -8,7 +12,7 @@ addons:
 install:
   - pip install tox
   - pip install tox-travis
-script: tox -e ALL
+script: tox
 deploy:
   provider: pypi
   distributions: "sdist bdist_wheel"
